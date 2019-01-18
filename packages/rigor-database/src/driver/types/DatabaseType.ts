@@ -1,2 +1,2 @@
 export type DatabaseType =
-    "sqlite";
+    "sqlite" | "mssql";
