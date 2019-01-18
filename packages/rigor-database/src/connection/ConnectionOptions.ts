@@ -1,2 +1,3 @@
 import {SqliteConnectionOptions} from "../driver/sqlite/SqliteConnectionOptions";
-export type ConnectionOptions = SqliteConnectionOptions
+import { SqlServerConnectionOptions } from "../driver/sqlserver/SqlServerConnectionOptions";
+export type ConnectionOptions = SqliteConnectionOptions | SqlServerConnectionOptions

@@ -6,15 +6,10 @@ import {  ConnectionOptions,createConnection, ConnectionManager } from '../../ri
  // database: "/Users/simon/Rigor-Prototype/packages/rigor-server/src/tester.sqlite"
 //}
 const options: ConnectionOptions = {
-  type: "mssql",
+    type: "mssql",
     host: "ENTDEV01",
     port: 1433,
-    database: "ondeck_main",
-    extra: {
-        driver: windowsDriver,
-        trustedConnection: true
-    }
-
+    database: "ondeck_main"
   }
 
 
