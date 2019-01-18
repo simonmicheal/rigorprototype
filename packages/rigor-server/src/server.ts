@@ -1,10 +1,22 @@
 import app from './app';
 import {  ConnectionOptions,createConnection, ConnectionManager } from '../../rigor-database/src'
 
+//const options: ConnectionOptions = {
+ //// type: "mssql",
+ // database: "/Users/simon/Rigor-Prototype/packages/rigor-server/src/tester.sqlite"
+//}
 const options: ConnectionOptions = {
-  type: "sqlite",
-  database: "/Users/simon/Rigor-Prototype/packages/rigor-server/src/tester.sqlite"
-}
+  type: "mssql",
+    host: "ENTDEV01",
+    port: 1433,
+    database: "ondeck_main",
+    extra: {
+        driver: windowsDriver,
+        trustedConnection: true
+    }
+
+  }
+
 
 // Potentially lots of routes
 // route our app
