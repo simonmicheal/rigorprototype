@@ -1,9 +1,7 @@
-import * as express from 'express';
+import { Module } from '@nestjs/common';
+import { UsersModule } from '../../rigor-services/src/service/users/users.module';
 
-// Create Express server
-const app = express();
-
-// Express configuration
-app.set('port', process.env.PORT || 3000);
-
-export default app;
+@Module({
+  imports: [UsersModule],
+})
+export class ApplicationModule {}
