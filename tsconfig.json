@@ -18,13 +18,10 @@
         "typeRoots": [
             "node_modules/@types"
         ],
-        "baseUrl": "./",
+        "baseUrl": "./packages",
         "paths": {
-            "@rigor-common/database/*": [
-                "./packages/rigor-database/*"
-            ],
-            "@rigor-common/*": [
-                "./packages/rigor-common/*"
+            "@rigor-database/*": [
+                "./rigor-database/src/*"
             ],
             "*": [
                 "node_modules/*"

@@ -2,7 +2,7 @@ import {
     Controller,
     Get,
   } from '@nestjs/common';
-  import { User } from './models/user.model';
+  import { IUser } from '@rigor-database/interfaces/index';
   import { UsersService } from './users.service';
 
   @Controller('users')
@@ -10,7 +10,8 @@ import {
     constructor(private readonly usersService: UsersService) {}
     
     @Get()
-    async findAll(): Promise<User[]> {
-      return this.usersService.findAll();
+    async findAll(): Promise<IUser[]> {
+      let t = await this.usersService.findAll();
+      return t;
     }
   }

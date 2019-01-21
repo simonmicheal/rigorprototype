@@ -51,7 +51,7 @@ export class SqlServerDriver implements Driver {
 
     async query(query: string, parameters?: any[]): Promise<any> {
         return new Promise<any[]>((resolve, reject) => {
-             this.master.request().query('select * from users', (err: any, result: any) => {
+             this.master.request().query('select * from Users', (err: any, result: any) => {
                 return resolve(result.recordsets);
             })
         });
@@ -63,10 +63,10 @@ export class SqlServerDriver implements Driver {
 
 
         var connectionOptions = {
-            server: 'localhost',
+            server: 'azurelocal.database.windows.net',
             database: 'ondeck_main',
-            user: 'sa',
-            password: 'Mexico123!',
+            user: 'simonmicheal',
+            password: 'Mexico1234!',
             driver: "mssql",
             options: {
                 trustedConnection: false,
