@@ -26,6 +26,7 @@ function createWindow() {
     win.loadURL('http://localhost:4200');
   } else {
     console.log(__dirname);
+
     win.loadURL(url.format({
       pathname: path.join(__dirname, '/index.html'),
       protocol: 'file:',

@@ -3,7 +3,7 @@
     "private": true,
     "scripts": {
         "build": "ng build && tsc --p ./packages/rigor-desktop",
-        "build:electron": "tsc --p ./packages/rigor-desktop",
+        "build:electron": "ng build && tsc --p ./packages/rigor-desktop",
         "electron:serve": "wait-on http-get://localhost:4200/ && electron ./dist/rigor-web --serve",
         "electron": "electron ./dist/rigor-web",
         "start:debug": "nodemon --inspect=5858 -e ts,tsx --exec node -r ts-node/register ./packages/rigor-server/src/server.ts"
