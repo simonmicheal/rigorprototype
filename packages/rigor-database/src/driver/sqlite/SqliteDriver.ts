@@ -62,7 +62,7 @@ export class SqliteDriver implements Driver {
     
     protected loadDependencies(): void {
         try {
-            this.sqlite3 = require("sqlite3");
+          //  this.sqlite3 = require("sqlite3");
 
         } catch (e) {
             throw new Error(e);
