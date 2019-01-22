@@ -6,7 +6,7 @@ import { SqlServerConnectionCredentialsOptions } from "./SqlServerConnectionCred
 export class SqlServerDriver implements Driver {
 
     connection: Connection;
-    sqlserver: any;
+    mssql: any;
     master: any;
     options: SqlServerConnectionOptions;
     database?: string;
@@ -25,7 +25,7 @@ export class SqlServerDriver implements Driver {
 
     protected createDatabaseConnection() {
         return new Promise<void>(async (ok, fail) => {
-            const databaseConnection = new this.sqlserver.connect(this.options, (err: any) => {
+            const databaseConnection = new this.mssql.connect(this.options, (err: any) => {
                 if (err) return fail(err);
                 ok(databaseConnection);
             });
@@ -42,7 +42,7 @@ export class SqlServerDriver implements Driver {
 
     protected loadDependencies(): void {
         try {
-            this.sqlserver = require('mssql');
+            this.mssql = require('mssql');
 
         } catch (e) {
             throw Error;
@@ -98,7 +98,7 @@ export class SqlServerDriver implements Driver {
         //else if (!connectionOptions.options.useUTC) connectionOptions.options.useUTC = false;
 
         return new Promise<void>((ok, fail) => {
-            const pool = new this.sqlserver.ConnectionPool(connectionOptions);
+            const pool = new this.mssql.ConnectionPool(connectionOptions);
 
             const { logger } = this.connection;
 

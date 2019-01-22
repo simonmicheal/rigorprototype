@@ -9,8 +9,11 @@
         "projectType": "application",
         "architect": {
           "build": {
-            "builder": "@angular-devkit/build-angular:browser",
+            "builder": "angular-cli-builders:custom-webpack-browser",
             "options": {
+              "customWebpackConfig": {
+                 "path": "./extra-webpack.config.js"
+              },
               "outputPath": "dist/rigor-web",
               "index": "./packages/rigor-web/src/index.html",
               "main": "./packages/rigor-web/src/main.ts",
