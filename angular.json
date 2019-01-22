@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-      "angular-bare-bones": {
+      "rigor": {
         "root": "",
         "sourceRoot": "./packages/rigor-web/src",
         "projectType": "application",
@@ -49,23 +49,23 @@
           "serve": {
             "builder": "@angular-devkit/build-angular:dev-server",
             "options": {
-              "browserTarget": "angular-bare-bones:build"
+              "browserTarget": "rigor:build"
             },
             "configurations": {
               "production": {
-                "browserTarget": "angular-bare-bones:build:production"
+                "browserTarget": "rigor:build:production"
               }
             }
           },
           "extract-i18n": {
             "builder": "@angular-devkit/build-angular:extract-i18n",
             "options": {
-              "browserTarget": "angular-bare-bones:build"
+              "browserTarget": "rigor:build"
             }
           }
         }
       },
-      "angular-bare-bones-e2e": {
+      "rigor-e2e": {
         "root": "",
         "sourceRoot": "",
         "projectType": "application",
@@ -74,7 +74,7 @@
             "builder": "@angular-devkit/build-angular:protractor",
             "options": {
               "protractorConfig": "./protractor.conf.js",
-              "devServerTarget": "angular-bare-bones:serve"
+              "devServerTarget": "rigor:serve"
             }
           },
           "lint": {
@@ -91,7 +91,7 @@
         }
       }
     },
-    "defaultProject": "angular-bare-bones",
+    "defaultProject": "rigor",
     "schematics": {
       "@schematics/angular:class": {
         "spec": false
