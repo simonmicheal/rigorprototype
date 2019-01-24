@@ -5,19 +5,17 @@
     "projects": {
       "rigor": {
         "root": "",
-        "sourceRoot": "./packages/rigor-web/src",
+        "sourceRoot": "./packages/rigor-web",
         "projectType": "application",
         "architect": {
           "build": {
-            "builder": "angular-cli-builders:custom-webpack-browser",
+            "builder": "@angular-devkit/build-angular:browser",
             "options": {
-              "customWebpackConfig": {
-                 "path": "./extra-webpack.config.js"
-              },
               "outputPath": "dist/rigor-web",
               "index": "./packages/rigor-web/src/index.html",
               "main": "./packages/rigor-web/src/main.ts",
               "tsConfig": "./packages/rigor-web/src/tsconfig.app.json",
+              "polyfills": "./packages/rigor-web/src/polyfills.ts",
               "assets": [
                 "./packages/rigor-web/src/assets",
                 "./packages/rigor-web/src/favicon.ico"
@@ -47,7 +45,7 @@
             }
           },
           "serve": {
-            "builder": "@angular-devkit/build-angular:dev-server",
+             "builder": "@angular-devkit/build-angular:dev-server",
             "options": {
               "browserTarget": "rigor:build"
             },

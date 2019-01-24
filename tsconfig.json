@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
-        "target": "es6",
-        "composite": true,
+        "allowSyntheticDefaultImports": true,
+        "target": "es5",
         "module": "commonjs",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
@@ -9,6 +9,7 @@
         "rootDir": "packages",
         "outDir": "./dist",
         "declaration": true,
+        "sourceMap": true,
         "lib": [
             "es2017",
             "es2016",

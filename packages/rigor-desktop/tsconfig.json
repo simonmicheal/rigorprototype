@@ -2,7 +2,7 @@
     "compileOnSave": false,
     "compilerOptions": {
       "baseUrl": ".",
-      "outDir": "../../dist/rigor-web",
+      "outDir": "../../dist/rigor-desktop",
       "sourceMap": true,
       "declaration": false,
       "module": "commonjs",
@@ -18,5 +18,8 @@
         "es2018",
         "dom"
       ]
-    }
+    },
+    "include": [
+      "./index.ts"
+    ]
   }

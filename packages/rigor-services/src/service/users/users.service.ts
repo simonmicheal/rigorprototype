@@ -17,7 +17,7 @@ export class UsersService {
 
     const options: ConnectionOptions = {
       type: "mssql",
-      database: "/Users/simon/Rigor-Prototype/packages/rigor-server/src/tester.sqlite"
+      database: "localhost"
     }
 
     const connectionManager = new ConnectionManager();

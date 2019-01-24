@@ -3,6 +3,7 @@ import * as path from 'path';
 import * as url from 'url';
 
 let win, serve;
+const { ipcMain } = require('electron')
 const args = process.argv.slice(1);
 serve = args.some(val => val === '--serve');
 
@@ -28,13 +29,18 @@ function createWindow() {
     console.log(__dirname);
 
     win.loadURL(url.format({
-      pathname: path.join(__dirname, '/index.html'),
+      pathname: path.join(__dirname, '../rigor-web/index.html'),
       protocol: 'file:',
       slashes: true
     }));
   }
 
-  // win.webContents.openDevTools();
+  ipcMain.on('getDB', async (event, arg) => { 
+    let dbFile = path.join(app.getPath("userData"),'tester.sqlite')
+    event.sender.send('getDB-reply',dbFile)
+  })
+
+  win.webContents.openDevTools();
 
   // Emitted when the window is closed.
   win.on('closed', () => {

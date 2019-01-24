@@ -63,10 +63,10 @@ export class SqlServerDriver implements Driver {
 
 
         var connectionOptions = {
-            server: 'azurelocal.database.windows.net',
+            server: 'localhost',
             database: 'ondeck_main',
-            user: 'simonmicheal',
-            password: 'Mexico1234!',
+            user: 'sa',
+            password: 'Mexico123!',
             driver: "mssql",
             options: {
                 trustedConnection: false,

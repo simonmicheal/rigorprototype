@@ -15,6 +15,32 @@
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:4200",
             "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Debug Electron",
+            "type": "node",
+            "request": "launch",
+            "protocol": "inspector",
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
+            "runtimeArgs": [
+                "--remote-debugging-port=9223",
+                "${workspaceRoot}/dist/rigor-web/rigor-desktop/index.js"
+            ],
+            // This is the important stuff
+            "program": "${workspaceRoot}/packages/rigor-desktop/index.ts",
+            "outFiles": [
+                "${workspaceRoot}/dist/rigor-web/rigor-desktop/index.js"
+            ],
+            "sourceMaps": true
+        },
+        {
+            "name": "Electron: Renderer",
+            "type": "chrome",
+            "request": "attach",
+            "port": 9223,
+            "webRoot": "${workspaceFolder}/dist/rigor-web/",
+            "timeout": 30000
         }
     ]
 }

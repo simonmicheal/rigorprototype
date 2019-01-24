@@ -7,7 +7,7 @@
     "build:watch": "tsc --watch",
     "start": "ts-node -r tsconfig-paths/register src/server.ts",
     "start:dev": "nodemon",
-    "start:debug": "nodemon --inspect=5858 -e ts,tsx --exec node -r ts-node/register ./src/server.ts"
+    "start:debug": "nodemon --inspect=5858 -L -e ts,tsx --exec node -r ts-node/register ./src/server.ts"
   },
   "dependencies": {
     "@rigor-prototype/rigor-common": "1.0.0",
